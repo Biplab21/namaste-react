@@ -2,22 +2,26 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 
-const parent = React.createElement("div",
-    { id: "parent" },
-    React.createElement("div", { id: "child" },
-        [
-            React.createElement("h1", {}, "I am a H1 tag!"),
-            React.createElement("h2", {}, "I am a H2 tag!!")
-        ]
-    )
+const title1 =  (
+    <h1 className='head'>
+       This is title1
+    </h1>
 )
 
-console.log(parent);
+const Title = ()=> (
+    <h1 className='head'>
+       This is title
+    </h1>
+)
 
-// const heading = React.createElement("h1", {
-//     id: "heading"
-// }, "Hello World!")
+//React Functional Component
+const HeadingComponent = ()=>(
+    <div className="container">
+        <Title/>
+        <h1 id='container'>This is a functional component</h1>
+    </div>
+)
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(parent);
+root.render(<HeadingComponent/>);
