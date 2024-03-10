@@ -75,3 +75,25 @@
 .filter{
     display: flex;
 }
+
+
+#login-form{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+#login-form>label,#login-form>button{
+    margin: 10px;
+}
+
+#login-form>input{
+    margin-left: 10px;
+}
+
+.validation-div{
+    margin: 10px 0 0 10px;
+    color: red;
+    font-style: italic;
+    font-weight: bold;
+}

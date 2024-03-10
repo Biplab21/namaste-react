@@ -33,3 +33,7 @@
 Normal JS utility function
 useState() - Superpowerful state variable
 useEffect()
+
+# Types routing in web apps
+ - Client Side Routing
+ - Server Side Routing
