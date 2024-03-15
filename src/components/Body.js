@@ -2,23 +2,18 @@ import { useEffect, useState } from "react"
 import ResturantCard from "./ResturantCard"
 import Shimmer from "./Shimmer"
 import { Link } from "react-router-dom"
+import useOnlineStatus from "../utils/useOnlineStatus"
+import useListOfRestaurants from "../utils/useListOfRestaurants"
 
 const Body = () => {
 
-    let [ listOfResturants, setListOfResturants ] = useState([])
-    let [ filteredResturants, setFilteredResturants ] = useState([])
     let [ searchKeyword, setSearchKeyword ] = useState("")
+    const { listOfResturants, filteredResturants } = useListOfRestaurants()
 
-    useEffect(() => {
-        fetchData()
-    }, [])
+    const onlineStatus = useOnlineStatus()
+    console.log("onlineStatus", onlineStatus);
 
-    const fetchData = async () => {
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.51800&lng=88.38320&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
-        const json = await data.json()
-        setListOfResturants(json?.data?.cards[ 4 ]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-        setFilteredResturants(json?.data?.cards[ 4 ]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-    }
+    if (!onlineStatus) return <h1>Looks like you are offline!! Please check your internet connection</h1>
 
     //Conditional rendering
     return listOfResturants.length === 0 ? <Shimmer /> : (
@@ -50,8 +45,8 @@ const Body = () => {
             <div className="res-container">
                 {
                     filteredResturants.map((resturant) => (
-                        <Link key={ resturant.info.id } to={"/restaurants/"+ resturant.info.id} ><ResturantCard  resData={ resturant } /></Link>
-                        
+                        <Link key={ resturant.info.id } to={ "/restaurants/" + resturant.info.id } ><ResturantCard resData={ resturant } /></Link>
+
                     ))
                 }
             </div>

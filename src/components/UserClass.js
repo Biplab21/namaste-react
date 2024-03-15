@@ -12,7 +12,6 @@ class UserClass extends React.Component {
             }
         }
         console.log("Constructor called");
-
     }
 
     async componentDidMount () {
@@ -24,6 +23,7 @@ class UserClass extends React.Component {
         this.setState({
             userInfo: json
         })
+
     }
 
     componentDidUpdate () {

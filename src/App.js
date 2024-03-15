@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import Header from './components/Header';
 import Body from './components/Body';
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
-import About from './components/About';
 import Contact from './components/Contact';
 import Error from './components/Error';
 import RestaurantMenu from './components/RestaurantMenu';
 import Login from './components/Login';
+import Shimmer from './components/Shimmer';
+
+//lazy loading
+const Grocery = lazy(() => import("./components/Grocery"))
+const About = lazy(() => import("./components/About"))
 
 const AppLayout = () => {
     return (
@@ -21,34 +25,38 @@ const AppLayout = () => {
 const appRouter = createBrowserRouter([
     {
         path: "/",
-        element: <AppLayout/>,
+        element: <AppLayout />,
         children: [
-            { 
+            {
                 path: "/",
-                element: <Body/>
+                element: <Body />
             },
-            { 
+            {
                 path: "/about",
-                element: <About/>
+                element: <Suspense fallback={<Shimmer/>}> <About /> </Suspense>
             },
-            { 
+            {
                 path: "/contact",
-                element: <Contact/>
+                element: <Contact />
             },
-            { 
+            {
                 path: "/restaurants/:resId",
-                element: <RestaurantMenu/>
+                element: <RestaurantMenu />
             },
-            { 
+            {
                 path: "/login",
-                element: <Login/>
+                element: <Login />
+            },
+            {
+                path: "/grocery",
+                element: <Suspense fallback={ <Shimmer /> }> <Grocery /> </Suspense>
             }
         ],
-        errorElement: <Error/>
+        errorElement: <Error />
     }
-    
+
 ])
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<RouterProvider router={appRouter} />);
+root.render(<RouterProvider router={ appRouter } />);
