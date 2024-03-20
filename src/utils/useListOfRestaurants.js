@@ -15,7 +15,7 @@ const useListOfRestaurants = () => {
         setFilteredResturants(json?.data?.cards[ 4 ]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     }
     return {
-        listOfResturants, filteredResturants
+        listOfResturants, filteredResturants, setListOfResturants, setFilteredResturants
     }
 }
 

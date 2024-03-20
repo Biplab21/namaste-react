@@ -44,9 +44,10 @@ const Login = () => {
     })
 
     return (
-        <form id="login-form" onSubmit={ formik.handleSubmit }>
-            <label htmlFor="firstName">First Name</label>
+        <form className='flex flex-col w-1/2' onSubmit={ formik.handleSubmit }>
+            <label className='m-2' htmlFor="firstName">First Name</label>
             <input
+                className='ml-2'
                 type="firstName"
                 id="firstName"
                 name="firstName"
@@ -60,6 +61,7 @@ const Login = () => {
 
             <label htmlFor="lastName">Last Name</label>
             <input
+                className='ml-2'
                 type="lastName"
                 id="lastName"
                 name="lastName"
@@ -68,11 +70,12 @@ const Login = () => {
                 value={ formik.values.lastName }
             />
             { formik.touched.lastName && formik.errors.lastName ? (
-                <div className='validation-div'>{ formik.errors.lastName }</div>
+                <div className='ml-2 mr-2 text-red-600 font-bold'>{ formik.errors.lastName }</div>
             ) : null }
 
             <label htmlFor="email">Email Address</label>
             <input
+                className='ml-2'
                 type="email"
                 id="email"
                 name="email"
@@ -84,7 +87,7 @@ const Login = () => {
                 <div className='validation-div'>{ formik.errors.email }</div>
             ) : null }
 
-            <button type='submit'>Submit</button>
+            <button className='m-2' type='submit'>Submit</button>
         </form>
     )
 }
