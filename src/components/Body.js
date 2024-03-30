@@ -1,3 +1,4 @@
+import React from "react"
 import { useContext, useState } from "react"
 import ResturantCard, { newRestaurant } from "./ResturantCard"
 import Shimmer from "./Shimmer"
@@ -26,6 +27,7 @@ const Body = () => {
                 <div className="m-4 p-4">
                     <input
                         type="text"
+                        data-testid="searchInput"
                         className="border border-solid border-black"
                         placeholder="Search Resturants"
                         onChange={ (e) => setSearchKeyword(e.target.value) }
@@ -45,7 +47,6 @@ const Body = () => {
                             const filteredList = listOfResturants.filter(
                                 (res) => res.info.avgRating > 4.3
                             )
-                            console.log("Filtered list: ", filteredList);
                             setFilteredResturants(filteredList)
                         } }>Top Rated Resturants
                     </button>

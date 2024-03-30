@@ -1,3 +1,4 @@
+import React from "react";
 import { useContext, useState } from "react";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
@@ -14,7 +15,6 @@ const Header = () => {
 
     //subscribing to the store using a selector
     const cartItems = useSelector((store) => store.cart.items)
-    console.log("cartItems", cartItems);
     return (
         <div className="flex justify-between bg-pink-100 mb-2 shadow-lg px-2">
             <div className='m-5'>

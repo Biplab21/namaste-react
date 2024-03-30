@@ -1,0 +1,62 @@
+{
+"info":{
+    "id": "103063",
+    "name": "Chinese Wok",
+    "cloudinaryImageId": "oeyg6ayfog4rnbgvzzer",
+    "locality": "Highland park stall no 68, opp oriental bank",
+    "areaName": "Santoshpur",
+    "costForTwo": "₹300 for two",
+    "cuisines": [
+        "Momos",
+        "Fast Food",
+        "Seafood"
+    ],
+    "avgRating": 4.2,
+    "parentId": "61955",
+    "avgRatingString": "4.2",
+    "totalRatingsString": "5K+",
+    "sla": {
+        "deliveryTime": 44,
+        "lastMileTravel": 5,
+        "serviceability": "SERVICEABLE",
+        "slaString": "40-45 mins",
+        "lastMileTravelString": "5.0 km",
+        "iconType": "ICON_TYPE_EMPTY"
+    },
+    "availability": {
+        "nextCloseTime": "2024-03-26 22:45:00",
+        "opened": true
+    },
+    "badges": {},
+    "isOpen": true,
+    "type": "F",
+    "badgesV2": {
+        "entityBadges": {
+            "imageBased": {},
+            "textBased": {},
+            "textExtendedBadges": {}
+        }
+    },
+    "aggregatedDiscountInfoV3": {
+        "header": "40% OFF",
+        "subHeader": "UPTO ₹80"
+    },
+    "orderabilityCommunication": {
+        "title": {},
+        "subTitle": {},
+        "message": {},
+        "customIcon": {}
+    },
+    "differentiatedUi": {
+        "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+        "differentiatedUiMediaDetails": {
+            "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+            "lottie": {},
+            "video": {}
+        }
+    },
+    "reviewsSummary": {},
+    "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+    "restaurantOfferPresentationInfo": {}
+}
+}

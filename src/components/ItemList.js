@@ -1,3 +1,4 @@
+import React from "react";
 import { useDispatch } from "react-redux";
 import { CDN_URL } from "../utils/constants";
 import { addItem } from "../utils/cartSlice";
@@ -14,7 +15,7 @@ const ItemList = ({ items }) => {
     return (
         <div>
             { items.map((item) => (
-                <div key={ item.card.info.id } className="p-2 m-2 border-gray-200 border-b-2 text-left flex justify-between">
+                <div data-testid="foodItems" key={ item.card.info.id } className="p-2 m-2 border-gray-200 border-b-2 text-left flex justify-between">
                     <div>
                         <div className="py-2">
                             <span> { item?.card?.info?.name }</span>
